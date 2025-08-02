@@ -4,13 +4,13 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2rww2"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n01xo"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3rv8"]
 radius = 8.0
 height = 32.0
 
 [node name="Ship" type="RigidBody2D"]
-gravity_scale = 0.0
 script = ExtResource("1_g6wvb")
+G = 100
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 position = Vector2(0, 2.38419e-06)
@@ -18,4 +18,4 @@ scale = Vector2(16, 16)
 mesh = SubResource("CapsuleMesh_2rww2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_n01xo")
+shape = SubResource("CapsuleShape2D_l3rv8")

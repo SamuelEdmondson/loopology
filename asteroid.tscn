@@ -6,11 +6,12 @@ radius = 8.0
 [sub_resource type="SphereMesh" id="SphereMesh_sby2r"]
 
 [node name="Asteroid" type="RigidBody2D" groups=["Asteroids"]]
-mass = 100.0
+mass = 100000.0
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_kaxet")
+disabled = true
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 position = Vector2(0, 1.66893e-06)
