@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb2vt827krpob"]
+
+[ext_resource type="PackedScene" uid="uid://qgjddb0uuykp" path="res://ship.tscn" id="1_gphj4"]
+[ext_resource type="PackedScene" uid="uid://bgvqci7g66k2b" path="res://asteroid.tscn" id="2_n8njq"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Ship" parent="." instance=ExtResource("1_gphj4")]
+position = Vector2(606, 288)
+
+[node name="Asteroid1" parent="." instance=ExtResource("2_n8njq")]
+position = Vector2(576, 129)
+
+[node name="Asteroid2" parent="." instance=ExtResource("2_n8njq")]
+position = Vector2(758, 252)
+
+[node name="Asteroid3" parent="." instance=ExtResource("2_n8njq")]
+position = Vector2(409, 305)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://qgjddb0uuykp"]
+
+[ext_resource type="Script" uid="uid://c678cca1f0ols" path="res://ship.gd" id="1_g6wvb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2rww2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n01xo"]
+radius = 8.0
+height = 32.0
+
+[node name="Ship" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_g6wvb")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(0, 2.38419e-06)
+scale = Vector2(16, 16)
+mesh = SubResource("CapsuleMesh_2rww2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_n01xo")
