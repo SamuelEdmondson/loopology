@@ -9,6 +9,15 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
+	
+	if (Input.is_action_just_pressed("ui_accept")):
+		get_tree().reload_current_scene()
+	
+	if (Input.is_anything_pressed()):
+		G = 50
+	else:
+		G = 0 
+	
 	var superposition = calculate_gravity_superposition()
 	self.apply_force(superposition)
 	arrow.rotation = superposition.angle() - self.rotation
@@ -17,6 +26,8 @@ func _process(delta: float) -> void:
 	
 	
 func calculate_gravity_superposition() -> Vector2:
+	if get_tree() == null:
+		return Vector2(0, 0)
 	var asteroids = get_tree().get_nodes_in_group("Asteroids")
 	var superposition = Vector2(0, 0)
 	for asteroid in asteroids:
