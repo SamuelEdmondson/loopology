@@ -3,6 +3,7 @@ extends RigidBody2D
 @export var G = 1000000
 @export var asteroid_field = 80
 @onready var mesh = $MeshInstance2D
+@onready var arrow = $Arrow
 
 func _ready() -> void:
 	pass
@@ -10,7 +11,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var superposition = calculate_gravity_superposition()
 	self.apply_force(superposition)
-	
+	arrow.rotation = superposition.angle() - self.rotation
+	arrow.rotation -= PI / 2
 	self.rotation = self.linear_velocity.angle() - PI/2
 	
 	
