@@ -1,9 +1,12 @@
 extends Node2D
 
 @onready var spawn_timer : Timer = $SpawnTimer
+@onready var asteroid_scene = preload("res://asteroid.tscn")
+
 
 func _ready() -> void:
-	pass
+	spawn_timer.wait_time = randf_range(.1, .5)
+	spawn_timer.start()
 
 func _process(delta: float) -> void:
 	pass
@@ -13,4 +16,13 @@ func _on_spawn_timer_timeout() -> void:
 	
 func spawn_asteroid_at_random_location() -> void:
 	var next_spawn_location : float = randf_range(0, get_viewport_rect().end.x)
+	var instance = asteroid_scene.instantiate()
+	get_tree().current_scene.add_child(instance)
+	instance.position = Vector2(next_spawn_location, 0)
+	
+	# Reset the timer
+	spawn_timer.wait_time = randf_range(.1, .5)
+	spawn_timer.start()
+
+
 	pass #spawn asteroid here

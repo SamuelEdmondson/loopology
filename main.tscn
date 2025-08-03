@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb2vt827krpob"]
+[gd_scene load_steps=4 format=3 uid="uid://bb2vt827krpob"]
 
 [ext_resource type="PackedScene" uid="uid://qgjddb0uuykp" path="res://ship.tscn" id="1_gphj4"]
 [ext_resource type="PackedScene" uid="uid://bgvqci7g66k2b" path="res://asteroid.tscn" id="2_n8njq"]
+[ext_resource type="PackedScene" uid="uid://dvi3jwkikab1a" path="res://asteroid_spawner.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node2D"]
 
@@ -17,3 +18,5 @@ position = Vector2(803, 128)
 
 [node name="Asteroid8" parent="." instance=ExtResource("2_n8njq")]
 position = Vector2(711, 217)
+
+[node name="AsteroidSpawner" parent="." instance=ExtResource("3_h2yge")]
